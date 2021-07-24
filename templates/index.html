@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Speech Recognition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}">
+</head>
+<body>
+<div id="SpeechContainer">
+    <h1>Upload new File</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file"/><br>
+        <input type="submit" id="submitButton" value="Transcribe"/>
+    </form>
+
+    {% if transcript != "" %}
+    <div id="SpeechTranscriptContainer">
+        <h1>Transcript</h1>
+        <p id="SpeechText">{{ transcript }}</p>
+    </div>
+    {% endif %}
+</div> 
+</body>
+</html>
