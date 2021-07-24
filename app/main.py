@@ -25,4 +25,4 @@ def index():
             transcript = recognizer.recognize_google(data, key=None)
 
 
-    return render_template('index.html', transcript=transcript)
+    return render_template('templates/index.html', transcript=transcript)
